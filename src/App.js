@@ -1,7 +1,8 @@
 import { useReducer } from 'react';
+// import { DigitButton } from './DigitButton';
 import './styles.css';
 
-const ACTIONS = {
+export const ACTIONS = {
   ADD_DIGIT: 'add-digit',
   CHOOSE_OPERATION: 'choose-operation',
   CLEAR: 'clear',
@@ -25,7 +26,6 @@ function App() {
     {}
   );
 
-  dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: 1 } });
   return (
     <div className='calculator-grid'>
       <div className='output' id='display'>
@@ -38,19 +38,19 @@ function App() {
         AC
       </button>
       <button>DEL</button>
-      <OperationButton id='divide'>÷</OperationButton>
+      {/* <OperationButton id='divide'>÷</OperationButton> */}
       <button id='one'>1</button>
       <button id='two'>2</button>
       <button id='three'>3</button>
-      <OperationButton id='multiply'>*</OperationButton>
+      {/* <OperationButton id='multiply'>*</OperationButton> */}
       <button id='four'>4</button>
       <button id='five'>5</button>
       <button id='six'>6</button>
-      <OperationButton id='add'>+</OperationButton>
+      {/* <OperationButton id='add'>+</OperationButton> */}
       <button id='seven'>7</button>
       <button id='eight'>8</button>
       <button id='nine'>9</button>
-      <OperationButton id='subtract'>-</OperationButton>
+      {/* <OperationButton id='subtract'>-</OperationButton> */}
       <button id='decimal'>.</button>
       <button id='zero'>0</button>
       <button className='span-two' id='equals'>
