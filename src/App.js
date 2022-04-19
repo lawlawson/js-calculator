@@ -1,82 +1,40 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import './styles.css';
 
+function reducer(state, action) {}
+
 function App() {
-  const [expression, setExpression] = useState('');
-  const [answer, setAnswer] = useState(0);
-
-  const display = (symbol) => {
-    setExpression((prev) => prev + symbol);
-  };
-
-  const calculate = () => {
-    setAnswer(eval(expression));
-  };
-
-  const allClear = () => {};
+  const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
+    reducer,
+    {}
+  );
 
   return (
     <div className='calculator-grid'>
       <div className='output' id='display'>
-        <input
-          type='text'
-          value={expression}
-          placeholder='0'
-          className='previous-operand'
-          disabled
-        />
-        <div className='total'>{answer}</div>
+        <div className='previous-operand'>{previousOperand}</div>
+        <div className='current-operand'>{currentOperand}</div>
       </div>
-      <button onClick={allClear} className='span-two' id='clear'>
+      <button className='span-two' id='clear'>
         AC
       </button>
       <button>DEL</button>
-      <button onClick={() => display('/')} id='divide'>
-        /
-      </button>
-      <button onClick={() => display('/')} id='one'>
-        1
-      </button>
-      <button onClick={() => display('/')} id='two'>
-        2
-      </button>
-      <button onClick={() => display('/')} id='three'>
-        3
-      </button>
-      <button onClick={() => display('/')} id='multiply'>
-        *
-      </button>
-      <button onClick={() => display('/')} id='four'>
-        4
-      </button>
-      <button onClick={() => display('/')} id='five'>
-        5
-      </button>
-      <button onClick={() => display('/')} id='six'>
-        6
-      </button>
-      <button onClick={() => display('/')} id='add'>
-        +
-      </button>
-      <button onClick={() => display('/')} id='seven'>
-        7
-      </button>
-      <button onClick={() => display('/')} id='eight'>
-        8
-      </button>
-      <button onClick={() => display('/')} id='nine'>
-        9
-      </button>
-      <button onClick={() => display('/')} id='subtract'>
-        -
-      </button>
-      <button onClick={() => display('/')} id='decimal'>
-        .
-      </button>
-      <button onClick={() => display('/')} id='zero'>
-        0
-      </button>
-      <button onClick={() => display('/')} className='span-two' id='equals'>
+      <OperationButton id='divide'>÷</OperationButton>
+      <button id='one'>1</button>
+      <button id='two'>2</button>
+      <button id='three'>3</button>
+      <OperationButton id='multiply'>*</OperationButton>
+      <button id='four'>4</button>
+      <button id='five'>5</button>
+      <button id='six'>6</button>
+      <OperationButton id='add'>+</OperationButton>
+      <button id='seven'>7</button>
+      <button id='eight'>8</button>
+      <button id='nine'>9</button>
+      <OperationButton id='subtract'>-</OperationButton>
+      <button id='decimal'>.</button>
+      <button id='zero'>0</button>
+      <button className='span-two' id='equals'>
         =
       </button>
     </div>
