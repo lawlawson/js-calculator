@@ -1,5 +1,29 @@
 import './styles.css';
 
+const calcData = [
+  { id: 'clear', value: 'AC' },
+  { id: 'one', value: 1 },
+  { id: 'two', value: 2 },
+  { id: 'three', value: 3 },
+  { id: 'four', value: 4 },
+  { id: 'one', value: 1 },
+  { id: 'one', value: 1 },
+  { id: 'one', value: 1 },
+  { id: 'one', value: 1 },
+  { id: 'one', value: 1 },
+  { id: 'clear', value: 'AC' },
+  { id: 'clear', value: 'AC' },
+  { id: 'clear', value: 'AC' },
+  { id: 'clear', value: 'AC' },
+  { id: 'clear', value: 'AC' },
+  { id: 'clear', value: 'AC' },
+  { id: 'clear', value: 'AC' },
+];
+
+const operators = ['AC', '/', '-', '+', '=', 'x'];
+
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 function App() {
   return (
     <div className='calculator-grid'>
