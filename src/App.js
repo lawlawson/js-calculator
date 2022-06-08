@@ -53,9 +53,14 @@ function App() {
   const [input, setInput] = useState('0');
   const [output, setOutput] = useState('');
 
+  const handleInput = () => {};
+
   return (
-    <div>
-      <Display input={input} output={output} />
+    <div className='container'>
+      <div className='calculator'>
+        <Display input={input} output={output} />
+        <Keyboard handleInput={handleInput} />
+      </div>
     </div>
   );
 
